@@ -1,0 +1,6 @@
+Witaj w badaniu! Twoim zadaniem jest wskazywanie kierunku ŚRODKOWEJ strzałki. 
+Ignoruj strzałki po bokach. 
+Naciśnij klawisz 'A', jeśli środkowa strzałka wskazuje w LEWO (<). 
+Naciśnij klawisz 'L', jeśli środkowa strzałka wskazuje w PRAWO (>). 
+Zadanie wykonaj jak najszybciej i jak najdokładniej.
+Teraz przejdziesz do krótkiej fazy próbnej (6 prób).Naciśnij SPACJĘ, aby rozpocząć.

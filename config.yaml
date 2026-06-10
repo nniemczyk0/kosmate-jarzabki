@@ -1,0 +1,23 @@
+fixation_min: 0.8  # czas fiksacji losowy w zakresie 800-1000 ms
+fixation_max: 1.0
+
+stimulus_min: 0.1  # czas prezentacji bodźca losowy w zakresie 100-200 ms - wystarczająco krótki czas ekspozycji, który wymaga szybkiej reakcji, ale nadal pozwala na przetworzenie bodźca przez uczestnika
+stimulus_max: 0.2
+
+response_timeout: 2.0 # maksymalny czas na reakcję uczestnika, po którym próba jest uznawana za "timeout", co jest ważne dla oceny reakcji w warunkach treningowych, gdzie feedback jest natychmiastowy, a uczestnik może potrzebować więcej czasu na reakcję
+
+isi_min: 0.8
+isi_max: 1.0
+
+background_color: lightgrey
+text_color: black
+
+practice_trials: 6
+experimental_trials: 36
+
+response_keys: 
+    left: "a"
+    right: "l"
+
+procent_celnosci_trening: 0.80 
+max_rt_trening: 1.5  # maksymalny czas reakcji w warunkach treningowych, mniejszy niż w warunkach eksperymentalnych, aby umożliwić uczestnikom dostosowanie się do zadania i poprawę swoich wyników przed przejściem do bardziej wymagających warunków eksperymentalnych.
