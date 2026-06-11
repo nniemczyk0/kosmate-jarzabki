@@ -75,7 +75,7 @@ def generuj_proby_testowe():
     proby = []
     uklady = {
         "congruent": {"lewo": "<<<<<", "prawo": ">>>>>"},
-        "incongruent": {"lewo": "<<><<", "prawo": ">><>>"},
+        "incongruent": {"lewo": ">><>>", "prawo": "<<><<"},
         "neutral": {"lewo": "--<--", "prawo": "-->--"}
     }
     #potrójna pętla generująca pełną pulę 36 zrównoważonych prób
