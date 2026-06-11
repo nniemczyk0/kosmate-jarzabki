@@ -64,19 +64,12 @@ def generuj_proby_treningowe():
     ]
     
     # pętla dopóki nie bedzie układu bez powtórzeń bodźców pod rząd
+    
     while True:
         random.shuffle(baza)
-        powtorka = False
-        # sprawdzenie każdej pary sąsiadujących prób
-        for i in range(len(baza) - 1):
-            if baza[i]["bodziec"] == baza[i + 1]["bodziec"]:
-                powtorka = True
-                break
-        # jeśli nie wykryto identycznych bodźców obok siebie, przerwanie pętli i zwrot gotowej listy
-        if not powtorka:
-            break
-            
-    return baza
+        #any() sprawdza czy choć jedna para obok siebie jest taka sama
+        if not any(baza[i]["bodziec"] == baza[i+1]["bodziec"] for i in range(len(baza)-1)):
+            return baza
 
 def generuj_proby_testowe():
     proby = []
@@ -95,22 +88,11 @@ def generuj_proby_testowe():
                     "bodziec": bodziec, "poprawny_klawisz": poprawny
                 })
                 
-    random.shuffle(proby)
-    
-    #algorytm naprawiający sekwencję: przechodzi przez całą listę i w razie wykrycia identycznego bodźca pod rząd, zamienia go z losowym elementem z dalszej części puli
-    for i in range(len(proby) - 1):
-        # sprawdzenie czy bieżący bodziec jest taki sam jak następny
-        if proby[i]["bodziec"] == proby[i + 1]["bodziec"]:
-            # szukanie losowego indeksu dalej w liście, z którym możemy się zamienić miejscami
-            for j in range(i + 2, len(proby)):
-                # zamiana ma sens tylko wtedy, gdy nowy element nie stworzy kolejnej powtórki
-                if proby[j]["bodziec"] != proby[i]["bodziec"]:
-                    # klasyczna zamiana miejscami dwóch elementów w pythonie za pomocą krotki
-                    proby[i + 1], proby[j] = proby[j], proby[i + 1]
-                    break
-                    
-    return proby
-
+    while True:
+        random.shuffle(proby)
+        # jeśli program nie znajdzie ani jednej powtórki pod rząd, kończy pętlę i oddaje listę
+        if not any(proby[i]["bodziec"] == proby[i+1]["bodziec"] for i in range(len(proby)-1)):
+            return proby
 
 
 
